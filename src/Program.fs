@@ -68,11 +68,7 @@ let handleMessage message =
             |>RawdataTypes.keyFromSourceDoc
         try
             let source = sourceDoc |> GitSource.Parse
-            let token = 
-                if source.Account.ToString() = "kmddk" then
-                    env "AZURE_TOKEN_KMDDK" null
-                else
-                    env "AZURE_TOKEN_TIME_PAYROLL_KMDDK" null
+            let token =  env "AZURE_DEVOPS_PAT" null
 
             match synchronize source token with
             None -> 

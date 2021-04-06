@@ -5,8 +5,8 @@ open Hobbes.Helpers.Environment
 
 module Reader =
 
-    let user = env "AZURE_TOKEN_KMDDK" null //env "GIT_AZURE_USER" null
-    let pwd = env "AZURE_TOKEN_KMDDK" null //env "GIT_AZURE_PASSWORD" null
+    let user = env "AZURE_DEVOPS_PAT" null
+    let pwd = env "AZURE_DEVOPS_PAT" null 
     type ErrorBody = JsonProvider<"""{"$id":"1","innerException":null,"message":"TF401175:The version descriptor <Branch: refs/heads/develop > could not be resolved to a version in the repository Gandalf","typeName":"Microsoft.TeamFoundation.Git.Server.GitUnresolvableToCommitException, Microsoft.TeamFoundation.Git.Server","typeKey":"GitUnresolvableToCommitException","errorCode":0,"eventId":3000}""">
     type GitSource = JsonProvider<"""{
                             "name"    : "git",
