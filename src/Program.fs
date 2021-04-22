@@ -61,7 +61,7 @@ let synchronize (source : GitSource.Root) token =
 let handleMessage message =
     match message with
     Empty -> Success
-    | Sync sourceDoc -> 
+    | Sync(_,sourceDoc) -> 
         Log.logf "Received message. %s" sourceDoc
         let key = 
             sourceDoc 
